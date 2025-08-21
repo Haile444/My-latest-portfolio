@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: "Petroleum & Energy Website(Fullstack role)",
-    description: "licenece based website project",
+    description: "Licenese based website project",
     tech: "Angular, ASP.NET Core, SQL Server",
     link: "#",
     image: petroleum,

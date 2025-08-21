@@ -1,38 +1,56 @@
+// src/pages/Home.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import profilePic from "../assets/profile.jpg";
 
 export default function Home() {
   return (
     <motion.section
       id="home"
       className="h-screen flex flex-col justify-center items-center bg-gray-50 text-center px-6"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
-      <h1 className="text-4xl md:text-6xl font-bold text-gray-800">
+      {/* Profile Picture */}
+      <motion.img
+        src={profilePic}
+        alt="Hailemeskel Girum"
+        className="w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full shadow-lg mb-6 object-cover object-center"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      />
+
+      {/* Intro Text */}
+      <motion.h1
+        className="text-4xl md:text-6xl font-bold text-gray-800"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+      >
         Hi, I'm <span className="text-red-600">Hailemeskel Girum</span> 👋
-      </h1>
+      </motion.h1>
 
-      <p className="mt-4 text-lg md:text-2xl text-gray-700 font-medium">
+      <motion.p
+        className="mt-4 text-lg md:text-2xl text-gray-700 font-medium max-w-xl"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.7 }}
+      >
         Fullstack Developer | Application Developer
-      </p>
+      </motion.p>
 
-      <p className="mt-6 max-w-2xl text-gray-600 text-md md:text-lg leading-relaxed">
-        I create scalable web applications and enterprise-level web-based solutions.
-        Experienced in <span className="text-blue-600 font-semibold">Angular</span>,{" "}
-        <span className="text-indigo-600 font-semibold">React</span>,{" "}
-        <span className="text-gray-800 font-semibold">.NET Core</span>, and{" "}
-        <span className="text-yellow-600 font-semibold">SQL Server</span>.
-      </p>
-
-      <a
+      {/* Contact Button */}
+      <motion.a
         href="#contact"
         className="mt-8 inline-block bg-gradient-to-r from-red-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.9 }}
       >
         Contact Me
-      </a>
+      </motion.a>
     </motion.section>
   );
 }
