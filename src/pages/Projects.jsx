@@ -14,14 +14,14 @@ const projects = [
   {
     title: "Lucy ERP",
     description: "Enterprise ERP system (Fullstack role)",
-    tech: "Angular, .NET Core, SQL Server",
+    tech: "Angular, .ASP.NET Core, SQL Server",
     link: "#",
     image: lucyERP,
   },
   {
-    title: "Petroleum & Energy Website",
-    description: "Corporate website project",
-    tech: "Angular, PrimeNG, ASP.NET Core, SQL Server",
+    title: "Petroleum & Energy Website(Fullstack role)",
+    description: "licenece based website project",
+    tech: "Angular, ASP.NET Core, SQL Server",
     link: "#",
     image: petroleum,
   },
