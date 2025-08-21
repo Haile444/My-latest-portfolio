@@ -30,7 +30,7 @@ const projects = [
     description: "Land management system (Fullstack role)",
     tech: "Angular, .NET Core, SQL Server",
     link: "#",
-    image: WAG,
+    image: land,
   },
   {
     title: "Michot IT Solution Website",
