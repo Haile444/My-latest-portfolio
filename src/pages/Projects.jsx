@@ -3,7 +3,7 @@ import ProjectCard from "../components/ProjectCard";
 // Placeholder images
  import lucyERP from "../assets/lucy-erp.jpg";
 import petroleum from "../assets/petroleum.png";
-import land from "../assets/land.png";
+import land from "../assets/Land.png";
 import michot from "../assets/michot.png";
 // const placeholder = "https://via.placeholder.com/400x250";
 
