@@ -5,21 +5,21 @@ export default function Projects() {
   const projects = [
     {
       title: "Lucy ERP",
-      description: "Enterprise ERP system (Fullstack role)",
+      description: "Enterprise ERP system (Participate as Fullstack role)",
       tech: "Angular, ASP.NET Core, SQL Server",
       link: "#", // no live link available
       image: "/assets/lucy-erp.jpg",
     },
     {
       title: "Petroleum & Energy Website",
-      description: "License-based website project",
+      description: "License-based website project(Participate as Fullstack role)",
       tech: "Angular, ASP.NET Core, SQL Server",
       link: "https://ews.pea.gov.et/", // ✅ real link
       image: "/assets/petroleum.png",
     },
     {
       title: "Addis Land",
-      description: "Land management system (Fullstack role)",
+      description: "Land management system (Participate as Fullstack role)",
       tech: "Angular, .NET Core, SQL Server",
       link: "https://www.addisland.gov.et/en-us/", // ✅ real link
       image: "/assets/land.PNG", // make sure filename matches exactly (png vs PNG)
