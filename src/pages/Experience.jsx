@@ -16,19 +16,18 @@ export default function Experience() {
           </p>
           <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700">
             <li>
-              Developed ERP, land management, and government web applications
+              Participate in petroleumand energy authority website , Lucy ERP, land management, and government web applications
               using <strong>Angular, React, .NET Core, and SQL Server</strong>.
             </li>
             <li>
-              Designed and integrated secure backend APIs, authentication, and
+              Designed and integrated third party backend APIs like telebirr and tin verification, authentication, and
               optimized database queries.
             </li>
             <li>
               Delivered end-to-end full-stack solutions from UI to database.
             </li>
             <li>
-              Worked directly with clients to gather requirements and deploy
-              production-ready systems.
+              collaborated with cross-functional teams to ensure high-quality software delivery.
             </li>
           </ul>
         </div>
