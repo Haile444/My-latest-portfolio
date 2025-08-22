@@ -8,7 +8,7 @@ export default function About() {
         <p className="text-gray-600 text-lg leading-relaxed">
           I’m a passionate Fullstack Developer with extensive experience 
           building high-impact web applications. 
-          I have developed license-based systems such as the Petroleum & Energy website, 
+          I have worked in license-based systems such as the Petroleum & Energy website, 
           enterprise solutions like Lucy ERP (payroll, finance, and business processes), 
           and land management platforms including appointment and property systems. 
           I specialize in Angular, React, ASP.NET, and SQL Server, delivering scalable, user-friendly, and enterprise-ready solutions.
