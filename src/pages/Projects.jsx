@@ -7,29 +7,29 @@ export default function Projects() {
       title: "Lucy ERP",
       description: "Enterprise ERP system (Fullstack role)",
       tech: "Angular, ASP.NET Core, SQL Server",
-      link: "#",
+      link: "#", // no live link available
       image: "/assets/lucy-erp.jpg",
     },
     {
       title: "Petroleum & Energy Website",
       description: "License-based website project",
       tech: "Angular, ASP.NET Core, SQL Server",
-      link: "#",
+      link: "https://ews.pea.gov.et/", // ✅ real link
       image: "/assets/petroleum.png",
     },
     {
       title: "Addis Land",
       description: "Land management system (Fullstack role)",
       tech: "Angular, .NET Core, SQL Server",
-      link: "#",
-      image: "/assets/land.PNG",
+      link: "https://www.addisland.gov.et/en-us/", // ✅ real link
+      image: "/assets/land.PNG", // make sure filename matches exactly (png vs PNG)
     },
     {
       title: "Michot IT Solution Website",
       description: "Company website built solo",
       tech: "React, Tailwind CSS, Framer Motion",
-      link: "#",
-      image: "/assets/michot.PNG",
+      link: "https://michot-it-solution.vercel.app/", // ✅ real link
+      image: "/assets/michot.PNG", 
     },
   ];
 
