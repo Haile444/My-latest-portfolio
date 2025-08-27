@@ -11,7 +11,7 @@ export default function Projects() {
       image: "/assets/lucy-erp.jpg",
     },
     {
-      title: "Petroleum & Energy Website",
+      title: "Petroleum & Energy Authority Website",
       description: "License-based website project(Participate as Fullstack role)",
       tech: "Angular, ASP.NET Core, SQL Server",
       link: "https://ews.pea.gov.et/", // ✅ real link
