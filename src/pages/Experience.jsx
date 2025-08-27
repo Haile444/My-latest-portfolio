@@ -16,7 +16,7 @@ export default function Experience() {
           </p>
           <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700">
             <li>
-              Participate in petroleumand energy authority website , Lucy ERP, land management, and government web applications
+              Participate in petroleum and energy authority website , Lucy ERP, land management, and government web applications
               using <strong>Angular, React, .NET Core, and SQL Server</strong>.
             </li>
             <li>
