@@ -28,7 +28,7 @@ export default function Projects() {
       title: "Michot IT Solution Website",
       description: "Company website built solo",
       tech: "React, Tailwind CSS, Framer Motion",
-      link: "https://michot-it-solution.vercel.app/", // ✅ real link
+      link: "https://michotitsolution.com/", // ✅ real link
       image: "/assets/michot.PNG", 
     },
   ];
