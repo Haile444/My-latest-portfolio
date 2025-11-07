@@ -14,10 +14,10 @@ export default function Contact() {
             <FaEnvelope className="text-2xl text-indigo-600" />
             <span>hailemeskel444@gmail.com</span>
           </div>
-          <div className="flex items-center justify-center space-x-4">
+          {/* <div className="flex items-center justify-center space-x-4">
             <FaPhone className="text-2xl text-red-600" />
             <span>+251 962 91 03 58</span>
-          </div>
+          </div> */}
           <div className="flex items-center justify-center space-x-4">
             <FaMapMarkerAlt className="text-2xl text-indigo-600" />
             <span>Addis Ababa, Ethiopia</span>
