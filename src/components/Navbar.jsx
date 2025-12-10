@@ -1,90 +1,88 @@
-import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
   const links = [
-    { name: "Home", href: "#home" },
-    { name: "Projects", href: "#projects" },
-    { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", to: "/" },
+    { name: "Projects", to: "/projects" },
+    { name: "About", to: "/about" },
+    { name: "Experience", to: "/experience" },
+    { name: "Contact", to: "/contact" },
   ];
 
-  const handleToggle = () => setIsOpen(!isOpen);
-
-  const handleLinkClick = (e, href) => {
-    e.preventDefault();
-    const section = document.querySelector(href);
-    section.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false); // close menu on click
-  };
-
   return (
-    <nav className="bg-gradient-to-r from-red-600 to-indigo-600 text-white fixed w-full z-50 shadow-md">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <h1 className="text-2xl font-bold">Hailemeskel Girum</h1>
+    <nav className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-gray-200">
+      <div className="container mx-auto flex justify-between items-center py-4 px-4">
+        {/* Logo */}
+        <NavLink
+          to="/"
+          className="text-2xl font-bold tracking-tight text-gray-800 hover:text-primary transition"
+        >
+          Hailemeskel Girum
+        </NavLink>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex space-x-8 text-sm font-medium">
           {links.map((link) => (
             <li key={link.name}>
-              <a
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className="hover:text-gray-200"
+              <NavLink
+                to={link.to}
+                className={({ isActive }) =>
+                  `transition-colors hover:text-primary ${
+                    isActive ? "text-primary font-semibold" : "text-gray-700"
+                  }`
+                }
               >
                 {link.name}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
 
-        {/* Hamburger Button */}
+        {/* Mobile Menu */}
         <div className="md:hidden">
-          <button onClick={handleToggle} className="focus:outline-none">
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="w-6 h-6" />
+              </Button>
+            </SheetTrigger>
+
+            <SheetContent side="right" className="bg-white/95 backdrop-blur-md">
+              <SheetHeader>
+                <SheetTitle className="text-left text-lg font-bold">
+                  Menu
+                </SheetTitle>
+              </SheetHeader>
+
+              <ul className="flex flex-col gap-6 mt-6">
+                {links.map((link) => (
+                  <li key={link.name}>
+                    <NavLink
+                      to={link.to}
+                      className={({ isActive }) =>
+                        `block text-lg font-medium transition-colors hover:text-primary ${
+                          isActive ? "text-primary" : "text-gray-700"
+                        }`
+                      }
+                    >
+                      {link.name}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <ul className="md:hidden bg-gradient-to-r from-red-600 to-indigo-600 text-white flex flex-col items-center space-y-4 py-4">
-          {links.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-lg hover:text-gray-200"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
     </nav>
   );
 }

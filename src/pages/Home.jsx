@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import profilePic from "../assets/profile.jpg";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 export default function Home() {
   return (
@@ -41,16 +43,48 @@ export default function Home() {
         Fullstack Developer | Application Developer
       </motion.p>
 
-      {/* Contact Button */}
-      <motion.a
-        href="#contact"
-        className="mt-8 inline-block bg-gradient-to-r from-red-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition"
+      {/* Buttons */}
+      <motion.div
+        className="mt-8 flex flex-wrap justify-center gap-4"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.9 }}
       >
-        Contact Me
-      </motion.a>
+        <Button onClick={() => (window.location.href = "/projects")}>
+          View Projects
+        </Button>
+        <Button
+          variant="outline"
+          onClick={() => (window.location.href = "/contact")}
+        >
+          Contact Me
+        </Button>
+      </motion.div>
+
+      {/* Feature Cards */}
+      <motion.div
+        className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 px-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.1 }}
+      >
+        <Card className="p-6 bg-white/20 backdrop-blur-md">
+          <h3 className="text-xl font-semibold mb-2">Modern UI</h3>
+          <p>Clean, responsive, and Shadcn-powered components for your apps.</p>
+        </Card>
+
+        <Card className="p-6 bg-white/20 backdrop-blur-md">
+          <h3 className="text-xl font-semibold mb-2">Fast Development</h3>
+          <p>
+            Build your portfolio or projects rapidly with ready-made components.
+          </p>
+        </Card>
+
+        <Card className="p-6 bg-white/20 backdrop-blur-md">
+          <h3 className="text-xl font-semibold mb-2">Fully Responsive</h3>
+          <p>Looks great on desktop, tablet, and mobile screens.</p>
+        </Card>
+      </motion.div>
     </motion.section>
   );
 }

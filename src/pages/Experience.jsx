@@ -1,54 +1,53 @@
-// src/pages/Experience.jsx
 import React from "react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function Experience() {
+  const experiences = [
+    {
+      title: "Full-Stack Developer",
+      company: "Xoka IT Solution",
+      period: "Aug 2024 – July 2025",
+      description: [
+        "Participated in Petroleum and Energy Authority website, Lucy ERP, land management, and government web applications using Angular, React, .NET Core, and SQL Server.",
+        "Designed and integrated third-party backend APIs like telebirr and TIN verification, authentication, and optimized database queries.",
+        "Delivered end-to-end full-stack solutions from UI to database.",
+        "Collaborated with cross-functional teams to ensure high-quality software delivery.",
+      ],
+    },
+    {
+      title: "Personal Project",
+      company: "Michot IT Solution Website",
+      period: "2025",
+      description: [
+        "Independently built the Michot IT Solution Website using React + Tailwind CSS.",
+        "Focused on responsive design, animations, smooth scrolling, and modern UI/UX.",
+        "Implemented interactive features and optimized performance for web.",
+      ],
+    },
+  ];
+
   return (
-    <section id="experience" className="min-h-screen px-4 py-10">
-      <h2 className="text-4xl font-bold text-center text-indigo-600 mb-10">
+    <section id="experience" className="min-h-screen px-6 py-20 bg-gray-50">
+      <h2 className="text-4xl font-bold text-center text-indigo-600 mb-12">
         Experience
       </h2>
-      <div className="max-w-4xl mx-auto space-y-6">
-        {/* Xoka IT Solution */}
-        <div className="bg-white shadow-md p-6 rounded-xl">
-          <h3 className="text-2xl font-bold">Full-Stack Developer</h3>
-          <p className="text-gray-600">
-            Xoka IT Solution | Aug 2024 – July 2025
-          </p>
-          <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700">
-            <li>
-              Participate in petroleum and energy authority website , Lucy ERP, land management, and government web applications
-              using <strong>Angular, React, .NET Core, and SQL Server</strong>.
-            </li>
-            <li>
-              Designed and integrated third party backend APIs like telebirr and tin verification, authentication, and
-              optimized database queries.
-            </li>
-            <li>
-              Delivered end-to-end full-stack solutions from UI to database.
-            </li>
-            <li>
-              collaborated with cross-functional teams to ensure high-quality software delivery.
-            </li>
-          </ul>
-        </div>
 
-        {/* Personal Project: Michot */}
-        <div className="bg-white shadow-md p-6 rounded-xl">
-          <h3 className="text-2xl font-bold">Personal Project</h3>
-          <p className="text-gray-600">Michot IT Solution Website | 2025</p>
-          <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700">
-            <li>
-              Independently built the <strong>Michot IT Solution Website</strong> using{" "}
-              <strong>React + Tailwind CSS</strong>.
-            </li>
-            <li>
-              Focused on responsive design, animations, smooth scrolling, and modern UI/UX.
-            </li>
-            <li>
-              Implemented interactive features and optimized performance for web.
-            </li>
-          </ul>
-        </div>
+      <div className="max-w-4xl mx-auto space-y-8">
+        {experiences.map((exp, idx) => (
+          <Card key={idx} className="p-6 shadow-lg rounded-xl">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+              <h3 className="text-2xl font-bold">{exp.title}</h3>
+              <Badge variant="secondary">{exp.period}</Badge>
+            </div>
+            <p className="text-gray-600 mb-4">{exp.company}</p>
+            <ul className="list-disc ml-6 space-y-2 text-gray-700">
+              {exp.description.map((line, i) => (
+                <li key={i}>{line}</li>
+              ))}
+            </ul>
+          </Card>
+        ))}
       </div>
     </section>
   );
