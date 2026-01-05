@@ -12,11 +12,11 @@ const socialLinks = [
     href: "https://www.linkedin.com/in/hailemeskel-girum-09099a301/",
   },
   // { icon: Twitter, label: "Twitter", href: "https://twitter.com/yourusername" },
-  { icon: Mail, label: "Email", href: "hailemeskel444.@gmail.com" },
+  // { icon: Mail, label: "Email", href: "https://www.hailemeskel444.@gmail.com" },
 ];
 
 const contactInfo = [
-  { icon: Mail, text: "hailemeskel444@egmail.com" },
+  { icon: Mail, text: "hailemeskel444@gmail.com" },
   // { icon: Phone, text: "+251 9XX XXX XXX" },
   { icon: MapPin, text: "Addis Ababa, Ethiopia" },
 ];
