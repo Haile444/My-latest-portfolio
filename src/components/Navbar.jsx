@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -7,81 +7,112 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
+import { motion } from "framer-motion";
+
+const links = [
+  { name: "Home", to: "/" },
+  { name: "About", to: "/about" },
+  { name: "Projects", to: "/projects" },
+  { name: "Experience", to: "/experience" },
+  { name: "Contact", to: "/contact" },
+];
 
 export default function Navbar() {
-  const links = [
-    { name: "Home", to: "/" },
-    { name: "Projects", to: "/projects" },
-    { name: "About", to: "/about" },
-    { name: "Experience", to: "/experience" },
-    { name: "Contact", to: "/contact" },
-  ];
-
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-gray-200">
-      <div className="container mx-auto flex justify-between items-center py-4 px-4">
-        {/* Logo */}
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
+      <div className="container mx-auto flex items-center justify-between py-5 px-6">
+        {/* Logo / Brand */}
         <NavLink
           to="/"
-          className="text-2xl font-bold tracking-tight text-gray-800 hover:text-primary transition"
+          className="relative text-2xl font-bold tracking-tight text-foreground hover:text-primary transition-colors duration-300"
         >
-          Hailemeskel Girum
+          Hailemeskel{" "}
+          <span className="text-primary bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            Girum
+          </span>
         </NavLink>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-sm font-medium">
-          {links.map((link) => (
-            <li key={link.name}>
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex items-center space-x-10">
+          {links.map((link, index) => (
+            <motion.li
+              key={link.name}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 + 0.2 }}
+            >
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
-                  `transition-colors hover:text-primary ${
-                    isActive ? "text-primary font-semibold" : "text-gray-700"
+                  `relative text-lg font-medium transition-all duration-300 ${
+                    isActive
+                      ? "text-primary"
+                      : "text-foreground/70 hover:text-primary"
                   }`
                 }
               >
-                {link.name}
+                {({ isActive }) => (
+                  <>
+                    {link.name}
+                    {isActive && (
+                      <motion.span
+                        layoutId="navbar-active-indicator"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                        initial={false}
+                        transition={{
+                          type: "spring",
+                          stiffness: 500,
+                          damping: 30,
+                        }}
+                      />
+                    )}
+                  </>
+                )}
               </NavLink>
-            </li>
+            </motion.li>
           ))}
         </ul>
 
         {/* Mobile Menu */}
-        <div className="md:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="w-6 h-6" />
-              </Button>
-            </SheetTrigger>
+        <Sheet>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon" aria-label="Open menu">
+              <Menu className="h-6 w-6" />
+            </Button>
+          </SheetTrigger>
 
-            <SheetContent side="right" className="bg-white/95 backdrop-blur-md">
-              <SheetHeader>
-                <SheetTitle className="text-left text-lg font-bold">
-                  Menu
-                </SheetTitle>
-              </SheetHeader>
+          <SheetContent
+            side="right"
+            className="w-80 bg-background/95 backdrop-blur-xl border-l border-border/50"
+          >
+            <SheetHeader className="text-left mb-8">
+              <SheetTitle className="text-2xl font-bold text-foreground">
+                Navigation
+              </SheetTitle>
+            </SheetHeader>
 
-              <ul className="flex flex-col gap-6 mt-6">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    <NavLink
-                      to={link.to}
-                      className={({ isActive }) =>
-                        `block text-lg font-medium transition-colors hover:text-primary ${
-                          isActive ? "text-primary" : "text-gray-700"
-                        }`
-                      }
-                    >
-                      {link.name}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </SheetContent>
-          </Sheet>
-        </div>
+            <div className="flex flex-col space-y-1">
+              {links.map((link) => (
+                <SheetClose asChild key={link.name}>
+                  <NavLink
+                    to={link.to}
+                    className={({ isActive }) =>
+                      `block py-4 px-2 text-xl font-medium rounded-lg transition-all duration-300 ${
+                        isActive
+                          ? "text-primary bg-primary/5"
+                          : "text-foreground/70 hover:text-primary hover:bg-accent/50"
+                      }`
+                    }
+                  >
+                    {link.name}
+                  </NavLink>
+                </SheetClose>
+              ))}
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </nav>
   );
