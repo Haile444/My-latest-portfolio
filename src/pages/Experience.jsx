@@ -8,7 +8,7 @@ const experiences = [
   {
     title: "Full-Stack Developer",
     company: "Xoka IT Solution",
-    period: "Aug 2024 – Jul 2025",
+    period: "Aug 2024 – July 2025",
     description: [
       "Contributed to major government and enterprise projects including the Petroleum & Energy Authority website, Lucy ERP system, Addis Land management platform, and other public-sector web applications.",
       "Developed full-stack features using Angular, React, ASP.NET Core, .NET Core, and SQL Server.",
@@ -19,7 +19,7 @@ const experiences = [
   {
     title: "Full-Stack Developer",
     company: "Michot IT Solution",
-    period: "2025 – Present",
+    period: "july 2025 – Present",
     highlight: true,
     description: [
       "Independently designed, developed, and deployed the official Michot IT Solution corporate website (michotitsolution.com) using React, Tailwind CSS, and Framer Motion.",
