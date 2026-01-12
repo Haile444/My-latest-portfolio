@@ -19,7 +19,7 @@ const experiences = [
   {
     title: "Full-Stack Developer",
     company: "Michot IT Solution",
-    period: "July 2025 – Present",
+    period: "August 2025 – Present",
     highlight: true,
     description: [
       "Independently designed, developed, and deployed the official Michot IT Solution corporate website (michotitsolution.com) using React, Tailwind CSS, and Framer Motion.",
